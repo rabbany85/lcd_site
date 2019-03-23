@@ -5,11 +5,12 @@
     <meta charset="utf-8">
     <title>iMetroTech | Technical support for today, tomorrow and far into the future</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="description" content="">
     <meta name="author" content="">
     <meta name="csrf-token" content="{{ csrf_token() }}">
     
-    <link rel="shortcut icon" href="images/favicon.ico">
+    <link rel="shortcut icon" href="{{ asset('site/images/favicon.ico') }}">
     
     <!-- CSS -->
     <link href="{{ asset('site/css/bootstrap.min.css') }}" rel="stylesheet" type="text/css" />
@@ -21,23 +22,19 @@
     <!-- FONTS -->
     <link href='http://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
     <link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet"/>
-
-   
-
-
-   
-    <!-- App styles -->
-    <!--  <link rel="stylesheet" href="{{URL::asset('frontEndAsset/dashBoardAsset/fonts/pe-icon-7-stroke/css')}}/pe-icon-7-stroke.css" />
-     <link rel="stylesheet" href="{{URL::asset('frontEndAsset/dashBoardAsset/fonts/pe-icon-7-stroke/css')}}/helper.css" />
-     <link rel="stylesheet" href="{{URL::asset('frontEndAsset/dashBoardAsset/styles')}}/style.css"/>
- -->
     
+        <script 
+    src="https://www.paypal.com/sdk/js?client-id=AUkxoZBY3y81dqNPgDkg0YQd0Fer0hmEtmDhSzN_QWebBobZyPFMjze5NUefzCB6HLjmur97tU-Y3w0Z&currency=GBP">
+    </script>
+ 
+
+
 </head>
 <body>
 
 <!-- PRELOADER -->
 <div id="preloader"><img src="{{ asset('site/images/preloader.gif') }}" alt="Logo Coming Soon" /></div>
-<!-- //PRELOADER -->
+<!-- PRELOADER -->
 <div class="preloader_hide">
 
     <!-- PAGE -->
@@ -84,10 +81,10 @@
                         </li>
                     </ul>
                     
-                    <div class="live_chat"><a href="{{Url::to('contactUs')}}" ><i class="fa fa-comment-o"></i> Contact Us</a></div>
+                    <div class="live_chat"><a href="{{ URL::to('contactUs') }}" ><i class="fa fa-comment-o"></i> Contact Us</a></div>
                     
                     <div class="phone_top">have a question? <a href="tel: 07526913581" >0203 862 1414</a></div>
-                </div><!-- //CONTAINER -->
+                </div><!-- CONTAINER -->
             </div><!-- TOP INFO -->
             
             
@@ -99,10 +96,10 @@
                     
                     <!-- LOGO -->
                     <div class="logo">
-                        <a href="{{URL::to('/')}}" >
+                        <a href="{{ URL::to('/') }}" >
                         <img src="{{ asset('site/images/banner/logo.jpg') }}" alt="Logo not found" />
                         </a>
-                    </div><!-- //LOGO -->
+                    </div><!-- LOGO -->
                     
                     
                     <!-- SEARCH FORM -->
@@ -116,39 +113,27 @@
                     
                     <!-- SHOPPING BAG -->
                     <div class="shopping_bag">
-                        <a class="shopping_bag_btn" href="{{URL::to('cart')}}" ><i class="fa fa-shopping-cart"></i><p>Check Out</p><span id="shopping_count">
-                            
-                        <?php
-                         $basketTotal = Session::get('basketTotal');
-                         if($basketTotal)
-                            {
-                              echo $basketTotal;
-                              //Session::put('basketTotal', NULL);
-                            }
-                          ?>
-
-
-
+                        <a class="shopping_bag_btn" href="{{ URL::to('cart') }}" ><i class="fa fa-shopping-cart"></i><p>Check Out</p>
+                        <span id="shopping_count">
+                            {{ Session::get('basketTotal')}}
                         </span></a>
-                    </div><!-- //SHOPPING BAG -->
+                    </div><!-- SHOPPING BAG -->
                     
                     
                     
                     <!-- MENU -->
                     <ul class="navmenu center">
-                        <li><a href="{{URL::to('/')}}" >Home</a></li>
-                        <li><a href="{{URL::to('faq')}}" >FAQ</a></li>
-                        <li><a href="{{URL::to('aboutUs')}}" >About</a></li>
-                        <li><a href="{{URL::to('contactUs')}}" >Contact</a></li>
-                        <li><a href="{{URL::to('categoryList')}}" >Products</a></li>
-                    </ul><!-- //MENU -->
-                </div><!-- //MENU BLOCK -->
-            </div><!-- //CONTAINER -->
-        </header><!-- //HEADER -->
+                        <li><a href="{{ URL::to('/') }}" >Home</a></li>
+                        <li><a href="{{ URL::to('faq') }}" >FAQ</a></li>
+                        <li><a href="{{ URL::to('contactUs') }}" >Contact</a></li>
+                        <li><a href="{{ URL::to('categoryList') }}" >Products</a></li>
+                    </ul><!-- MENU -->
+                </div><!-- MENU BLOCK -->
+            </div><!-- CONTAINER -->
+        </header><!-- HEADER -->
         
 
 @yield('mainContent')
-
 
 
         <!-- FOOTER -->
@@ -171,11 +156,10 @@
                     <div class="col-lg-2 col-md-2 col-sm-3 col-xs-6 col-ss-12 padbot30">
                         <h4>Information</h4>
                         <ul class="foot_menu">
-                            <li><a href="{{URL::to('/')}}" >Home</a></li>
-                            <li><a href="{{URL::to('faq')}}" >FAQ</a></li>
-                            <li><a href="{{URL::to('aboutUs')}}" >About</a></li>
-                            <li><a href="{{URL::to('contactUs')}}" >Contact</a></li>
-                            <li><a href="{{URL::to('categoryList')}}" >Products</a></li>
+                            <li><a href="{{ URL::to('/') }}" >Home</a></li>
+                            <li><a href="{{ URL::to('faq') }}" >FAQ</a></li>
+                            <li><a href="{{ URL::to('contactUs') }}" >Contact</a></li>
+                            <li><a href="{{ URL::to('categoryList') }}" >Products</a></li>
                         </ul>
                     </div>
                     
@@ -204,8 +188,8 @@
                             <a href="javascript:void(0);" ><i class="fa fa-instagram"></i></a>
                         </div>
                     </div>
-                </div><!-- //ROW -->
-            </div><!-- //CONTAINER -->
+                </div><!-- ROW -->
+            </div><!-- CONTAINER -->
             
             <!-- COPYRIGHT -->
             <div class="copyright">
@@ -219,10 +203,10 @@
                         <span>All rights reserved</span> |
                         <a class="back_top" href="javascript:void(0);" >Back to Top <i class="fa fa-angle-up"></i></a>
                     </div>
-                </div><!-- //CONTAINER -->
-            </div><!-- //COPYRIGHT -->
-        </footer><!-- //FOOTER -->
-    </div><!-- //PAGE -->
+                </div><!-- CONTAINER -->
+            </div><!-- COPYRIGHT -->
+        </footer><!-- FOOTER -->
+    </div><!-- PAGE -->
 </div>
 
 <!-- TOVAR MODAL CONTENT -->
@@ -249,9 +233,6 @@
     <script src="{{ asset('site/js/fancySelect.js') }}"></script>
     <script src="{{ asset('site/js/animate.js') }}" type="text/javascript"></script>
     <script src="{{ asset('site/js/myscript.js') }}" type="text/javascript"></script>
-
-
-
     
     <!-- End of JS call -->
 
@@ -260,7 +241,7 @@
         
 
 jQuery(document).ready(function(){
-            jQuery('#addToBasketForm').click(function(e){
+            jQuery('#addToBasketForm').submit(function(e){
                e.preventDefault();
                $.ajaxSetup({
                   headers: {
@@ -268,7 +249,7 @@ jQuery(document).ready(function(){
                   }
               });
                jQuery.ajax({
-                  url: "{{ url('/addToBasket/') }}",
+                  url: "{{ url('addToBasket') }}",
                   method: 'post',
                   data: {
                      id: jQuery('#id').val(),
@@ -291,7 +272,8 @@ jQuery(document).ready(function(){
 
 
 </script>
-    
+
+     
 </body>
 </html>
 

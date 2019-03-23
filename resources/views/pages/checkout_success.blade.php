@@ -9,15 +9,21 @@
 					<h1>Thank you</h1>
 					<h2>Your payment was successful.</h2>
 					<p>We will dispuch your products shortly.</p>
-					<a href="{{URL::to('customerLoginForm')}}">
+					<a href="{{URL::to('login')}}">
 					   <button type="button" class="btn btn-default">Profile</button>
 				    </a>
 				    <a href="{{URL::to('categoryList')}}">
 				       <button type="button" class="btn btn-success">Continue Shopping</button>
 				    </a>
-				    <a href="{{URL::to('customerLogout')}}">
-                       <button type="button" class="btn btn-primary">Logout</button>
+                    <a class="btn btn-success" href="{{ route('logout') }}"
+                                       onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                        {{ __('Logout') }}
                     </a>
+
+                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                        @csrf
+                    </form>
                     
 				</div>
 			</div><!-- //CONTAINER -->

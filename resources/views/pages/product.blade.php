@@ -49,7 +49,7 @@
 										<label for="quantity">Quantity:</label>
 										<input type="text" id="quantity" value="1" class="form-control">
 										<input type="submit" class="fa fa-shopping-cart" value="Add Now" class="form-control">
-									</form>										
+									</form>									
 								</div>
 								<div class="tovar_shared clearfix">
 									<p>Share item with friends</p>

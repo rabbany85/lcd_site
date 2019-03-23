@@ -21,10 +21,6 @@ class ProfileController extends Controller
 
 
     public function single(Profile $profile, Request $request){
-        // if($this->isAPI()){
-        //     return response()->json($venue);
-        // }
-        //dd($profile->media->url);
         return view('profile.single', [
             'profile' => $profile
         ]);

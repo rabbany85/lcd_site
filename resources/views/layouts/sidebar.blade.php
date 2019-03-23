@@ -7,28 +7,12 @@
 	    	 <span class="nav-label">Profile</span> 
 	        </a>
 	    </li>
-	    <li><a href="{{URL::to('login')}}"> 
+	    <li><a href="{{URL::to('categoryList')}}"> 
 	    	 <span class="nav-label">Shop</span> 
 	        </a>
 	    </li>
-	    <li><a href="{{URL::to('login')}}"> 
-	    	 <span class="nav-label">Message</span> 
-	        </a>
-	    </li>
-	    <li><a href="{{URL::to('login')}}"> 
-	    	 <span class="nav-label">Sell</span> 
-	        </a>
-	    </li>
-	    <li><a href="{{URL::to('login')}}"> 
-	    	 <span class="nav-label">History</span> 
-	        </a>
-	    </li>
-	    <li><a href="{{URL::to('login')}}"> 
-	    	 <span class="nav-label">Message</span> 
-	        </a>
-	    </li>
-	    <li><a href="{{URL::to('login')}}"> 
-	    	 <span class="nav-label">Delivery</span> 
+	    <li><a href="{{ route('order.index') }}"> 
+	    	 <span class="nav-label">My Orders</span> 
 	        </a>
 	    </li>
 	</ul>
@@ -44,20 +28,8 @@
 	    	   <span class="nav-label">Client</span>
 	    	</a>
 	    </li>
-	    <li><a href="{{URL::to('#')}}">
+	    <li><a href="{{ route('order.index') }}">
 	    	   <span class="nav-label">Order</span>
-	    	</a>
-	    </li>
-	    <li><a href="{{URL::to('#')}}">
-	    	   <span class="nav-label">Delivery</span>
-	    	</a>
-	    </li>
-	    <li><a href="{{URL::to('#')}}">
-	    	   <span class="nav-label">Sell Request</span>
-	    	</a>
-	    </li>
-	    <li><a href="{{URL::to('#')}}">
-	    	   <span class="nav-label">Message</span>
 	    	</a>
 	    </li>
 	    <li><a href="{{ route('product.index') }}">
@@ -66,6 +38,10 @@
 	    </li>
 	    <li><a href="{{ route('category.index') }}">
 	    	   <span class="nav-label">Category</span>
+	    	</a>
+	    </li>
+	    <li><a href="{{ route('delivery_charge.index')}}">
+	    	   <span class="nav-label">Delivery Charge</span>
 	    	</a>
 	    </li>	    
 	</ul>
@@ -86,20 +62,8 @@
 	    	   <span class="nav-label">Client</span>
 	    	</a>
 	    </li>
-	    <li><a href="{{URL::to('#')}}">
+	    <li><a href="{{ route('order.index') }}">
 	    	   <span class="nav-label">Order</span>
-	    	</a>
-	    </li>
-	    <li><a href="{{URL::to('login')}}"> 
-	    	 <span class="nav-label">Delivery</span> 
-	        </a>
-	    </li>
-	    <li><a href="{{URL::to('#')}}">
-	    	   <span class="nav-label">Sell Requests</span>
-	    	</a>
-	    </li>
-	    <li><a href="{{URL::to('#')}}">
-	    	   <span class="nav-label">Message</span>
 	    	</a>
 	    </li>
 	    <li><a href="{{ route('product.index') }}">
@@ -108,6 +72,10 @@
 	    </li>
 	    <li><a href="{{ route('category.index') }}">
 	    	   <span class="nav-label">Category</span>
+	    	</a>
+	    </li>
+	    <li><a href="{{ route('delivery_charge.index')}}">
+	    	   <span class="nav-label">Delivery Charge</span>
 	    	</a>
 	    </li>
 	</ul>
@@ -131,20 +99,8 @@
 	    	   <span class="nav-label">Client</span>
 	    	</a>
 	    </li>
-	    <li><a href="{{URL::to('#')}}">
+	    <li><a href="{{ route('order.index') }}">
 	    	   <span class="nav-label">Order</span>
-	    	</a>
-	    </li>
-	    <li><a href="{{URL::to('login')}}"> 
-	    	 <span class="nav-label">Delivery</span> 
-	        </a>
-	    </li>
-	    <li><a href="{{URL::to('#')}}">
-	    	   <span class="nav-label">Sell Requests</span>
-	    	</a>
-	    </li>
-	    <li><a href="{{URL::to('#')}}">
-	    	   <span class="nav-label">Message</span>
 	    	</a>
 	    </li>
 	    <li><a href="{{ route('product.index') }}">
@@ -153,6 +109,10 @@
 	    </li>
 	    <li><a href="{{ route('category.index') }}">
 	    	   <span class="nav-label">Category</span>
+	    	</a>
+	    </li>
+	    <li><a href="{{ route('delivery_charge.index')}}">
+	    	   <span class="nav-label">Delivery Charge</span>
 	    	</a>
 	    </li>
 	</ul>

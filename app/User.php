@@ -58,4 +58,11 @@ class User extends Authenticatable
     return $this->hasOne('App\Media', 'model_id', 'id')->where('model_name', 'user');
     }
 
+    /**
+     * Get the orders of the user.
+     */
+    public function orders(){
+        return $this->hasMany('App\Order');
+    }
+
 }

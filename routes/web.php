@@ -11,36 +11,28 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
 
 //pages
 Route::get('/',                    'PageController@home');
-Route::get('aboutUs',              'PageController@aboutUs');
 Route::get('contactUs',            'PageController@contactUs');
 Route::get('faq',                  'PageController@faq');
 Route::get('categoryList',         'PageController@categoryList');
 Route::get('productList/{id}',     'PageController@productList');
 Route::get('singleProduct/{id}',   'PageController@product');
-Route::post('contactSubmit',       'PageController@contactSubmit');
 
 
-Route::get('cart', 'CartController@cart');
-Route::get('checkOutPage', 'CartController@checkOutPage');
+
 Route::get('removeFromCart/{id}', 'CartController@removeFromCart');
-Route::get('paymentSuccess', 'CartController@paymentSuccess');
-
 Route::post('addToBasket', 'CartController@addToBasket');
 Route::post('addToCart', 'CartController@addToCart');
 Route::post('updateQuantity', 'CartController@updateQuantity');
 
 
 
-Route::post('response', 'CartController@response');
-Route::get('checkout_failed', 'CartController@checkoutFailed');
-Route::get('checkout_success', 'CartController@checkoutSuccess');
+Route::get('cart', 'CartController@cart');
+Route::get('cartConfirm', 'CartConfirmController@cartConfirm');
+Route::get('paymentExecute', 'CartConfirmController@paymentExecute');
+Route::get('success', 'CartConfirmController@success');
 
 
 
@@ -103,14 +95,21 @@ Route::prefix('product')->group(function(){
 });
 
 
+//delivery_charge
+
+Route::prefix('delivery_charge')->group(function(){
+  Route::any('/',                        'DeliveryChargeController@index')->name('delivery_charge.index');
+  Route::any('{delivery_charge}/edit',   'DeliveryChargeController@edit')->name('delivery_charge.edit');
+});
+
+
+
 //orders
 
 Route::prefix('order')->group(function(){
-  Route::any('/',              'OrderController@index')->name('order.index');
-  Route::any('new',            'OrderController@new')->name('order.new');
+  Route::get('/',              'OrderController@index')->name('order.index');
+  Route::post('tracking',      'OrderController@tracking')->name('order.tracking');
   Route::any('{order}',        'OrderController@single')->name('order.single');
-  Route::any('{order}/edit',   'OrderController@edit')->name('order.edit');
-  Route::any('{order}/delete', 'OrderController@delete')->name('order.delete');
 });
 
 

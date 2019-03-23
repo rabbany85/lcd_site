@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Facades\Redirect;
 use Illuminate\Http\Request;
 use App\User as Manager;
 
@@ -21,9 +23,6 @@ class ManagerController extends Controller
 
 
      public function index(Request $request){
-        // if($this->isAPI()){
-        //     return response()->json(Product::all());
-        // }
         return view('manager.index', [
             'managers' => Manager::where('user_type', 'Manager')->paginate(15)
         ]);
@@ -47,9 +46,6 @@ class ManagerController extends Controller
             $manager->password = Hash::make($request->input('password'));
             $manager->save();
 
-            // if($this->isAPI()){
-            //     return response()->json($venue);
-            // }
             return redirect()->route('manager.single', [
                 'manager' => $manager->id
             ]);
@@ -59,9 +55,6 @@ class ManagerController extends Controller
         ]);
     }
     public function single(Manager $manager, Request $request){
-        // if($this->isAPI()){
-        //     return response()->json($venue);
-        // }
         return view('manager.single', [
             'manager' => $manager
         ]);
@@ -82,9 +75,6 @@ class ManagerController extends Controller
             $data['email'] = $request->input('email');
             $manager->update($data);
         
-            // if($this->isAPI()){
-            //     return response()->json($venue);
-            // }
             return redirect()->route('manager.single', [
                 'manager' => $manager->id
             ]);
@@ -102,4 +92,5 @@ class ManagerController extends Controller
             'manager' => $manager
         ]);
     }
+
 }

@@ -16,7 +16,6 @@
                 </ol>
             </div>
             <h2 class="font-light m-b-xs">Name: {{$manager->title}} {{$manager->name}} {{$manager->last_name}}</h2>
-            <small>Manager's Information</small>
         </div>
     </div>
 </div>

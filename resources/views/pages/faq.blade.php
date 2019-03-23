@@ -16,7 +16,7 @@
 				<h3 class="pull-left"><b>FAQ Page</b></h3>
 				
 				<div class="pull-right">
-					<a href="women.html" >Back to shop<i class="fa fa-angle-right"></i></a>
+					<a href="{{URL::to('categoryList')}}" >Back to shop<i class="fa fa-angle-right"></i></a>
 				</div>
 			</div><!-- //CONTAINER -->
 		</section><!-- //PAGE HEADER -->
@@ -80,10 +80,6 @@
 								<p>There is no reason for your order to be rejected unless there is a problem with your payment. Please check with your bank or use different form of payment.</p>
 							</div>
 							
-							<h4 class="accordion_title">I can't order?</h4>
-							<div class="accordion_content">
-								<p>Please try from different device. If you are still unable to order, please contact our technical support team.</p>
-							</div>
 							
 							<h4 class="accordion_title">I am not happy about my last order?</h4>
 							<div class="accordion_content">
@@ -95,10 +91,6 @@
 								<p>If  you are having problems with your order please contact the us directly.</p>
 							</div>
 							
-							<h4 class="accordion_title">Can I buy and sell at the same time?</h4>
-							<div class="accordion_content">
-								<p>Unfortunately, you can not buy and sell at the same time. Thease are two different services we provide. You must use these two different services seperately.</p>
-							</div>
 							
 							<h4 class="accordion_title">What if my payment has failed?</h4>
 							<div class="accordion_content">
@@ -128,65 +120,24 @@
 					<!-- SIDEBAR -->
 					<div id="sidebar" class="col-lg-3 col-md-3 col-sm-3 padbot50">
 						
-						<!-- WIDGET SEARCH -->
-						<div class="sidepanel widget_search">
-							<form class="search_form" action="javascript:void(0);" method="get" name="search_form">
-								<input type="text" name="Search..." value="Search..." onFocus="if (this.value == 'Search...') this.value = '';" onBlur="if (this.value == '') this.value = 'Search...';" />
-							</form>
-						</div><!-- //WIDGET SEARCH -->
-						
 						<!-- CATEGORIES -->
 						<div class="sidepanel widget_categories">
 							<h3>Sidebar Menu</h3>
 							<ul>
-								<li><a href="about.html" >About Us</a></li>
-										<li><a href="gallery.html" >Gallery<span>new</span></a></li>
-								<li><a href="product-page.html" >Product Page</a></li>
-								<li><a href="shopping-bag.html" >Shopping Bag</a></li>
-								<li><a href="articles.html" >Articles</a></li>
-								<li><a href="product-catalog.html" >Product Catalog</a></li>
-								<li><a href="update.html" >Site Update</a></li>
-								<li><a href="contacts.html" >Contacts</a></li>
+								<li><a href="{{ URL::to('/') }}" >Home</a></li>
+		                        <li><a href="{{ URL::to('faq') }}" >FAQ</a></li>
+		                        <li><a href="{{ URL::to('contactUs') }}" >Contact</a></li>
+		                        <li><a href="{{ URL::to('categoryList') }}" >Products</a></li>
 							</ul>
 						</div><!-- //CATEGORIES -->
 						
-						<!-- NEWSLETTER FORM WIDGET -->
-						<div class="sidepanel widget_newsletter">
-							<div class="newsletter_wrapper">
-								<h3>NEWSLETTER</h3>
-								<form class="newsletter_form clearfix" action="javascript:void(0);" method="get">
-									<input type="text" name="newsletter" value="Enter E-mail & Get 10% off" onFocus="if (this.value == 'Enter E-mail & Get 10% off') this.value = '';" onBlur="if (this.value == '') this.value = 'Enter E-mail & Get 10% off';" />
-									<input class="btn newsletter_btn" type="submit" value="Sign up & get 10% off">
-								</form>
-							</div>
-						</div><!-- //NEWSLETTER FORM WIDGET -->
 						
-						<!-- WIDGET POPULAR POSTS -->
-						<div class="sidepanel widget_popular_posts">
-							<h3>Update</h3>
-							<ul>
-								<li class="widget_popular_post_item clearfix">
-									<a class="widget_popular_post_img" href="blog-post.html" ><img src="images/blog/popular1.jpg" alt="" /></a>
-									<a class="widget_popular_post_title" href="blog-post.html" >New items will be added from time to time.</a>
-									<span class="widget_popular_post_date">13 January 2018</span>
-								</li>
-								<li class="widget_popular_post_item clearfix">
-									<a class="widget_popular_post_img" href="blog-post.html" ><img src="images/blog/popular2.jpg" alt="" /></a>
-									<a class="widget_popular_post_title" href="blog-post.html" >You can sell your broken LCD direct to us.</a>
-									<span class="widget_popular_post_date">10 January 2018</span>
-								</li>
-								<li class="widget_popular_post_item clearfix">
-									<a class="widget_popular_post_img" href="blog-post.html" ><img src="images/blog/popular3.jpg" alt="" /></a>
-									<a class="widget_popular_post_title" href="blog-post.html" >We also do whole sell.</a>
-									<span class="widget_popular_post_date">5 January 2014</span>
-								</li>
-							</ul>
-						</div><!-- //WIDGET POPULAR POSTS -->
 						
 						<!-- BANNERS WIDGET -->
 						<div class="widget_banners">
-							<a class="banner nobord margbot10" href="javascript:void(0);" ><img src="images/tovar/banner10.jpg" alt="" /></a>
-							<a class="banner nobord margbot10" href="javascript:void(0);" ><img src="images/tovar/banner9.jpg" alt="" /></a>
+							<div class="sidepanel widget_categories">
+							 <a class="banner nobord" href="javascript:void(0);" ><img src="{{asset('site/images/banner/21.jpg')}}" alt="" /></a>
+						</div>
 						</div><!-- //BANNERS WIDGET -->
 					</div><!-- //SIDEBAR -->
 				</div><!-- //ROW -->

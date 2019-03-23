@@ -78,7 +78,7 @@ public function product($id) {
 public function categoryList() {
     
     $categories =Category::get();
-    $products = Product::paginate(15);
+    $products = Product::paginate(6);
     
     return view('pages.categoryList', compact('categories', 'products'));
   }
@@ -92,7 +92,7 @@ public function categoryList() {
 
 public function productList($id) {    
     $categories =Category::get();
-    $products = Product::where('category_id', $id)->paginate(15);
+    $products = Product::where('category_id', $id)->paginate(6);
            
     
     return view('pages.categoryList', compact('categories', 'products', 'product_image'));

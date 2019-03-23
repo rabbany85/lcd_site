@@ -2,17 +2,6 @@
 
 @section('mainContent')
 
-
-<?php
-     
-       $pp_checkout_btn = '<form action="https://www.paypal.com/cgi-bin/webscr" method="post">
-                           <input type="hidden" name="cmd" value="_cart">
-                           <input type="hidden" name="upload" value="1">
-                           <input type="hidden" name="business" value="shomit011@yahoo.com">';
-?>
-
-
-
         <!-- BREADCRUMBS -->
 		<section class="breadcrumb parallax margbot30"></section>
 		<!-- //BREADCRUMBS -->
@@ -24,7 +13,7 @@
 			     <div class="container">
 				      <h3 class="pull-left"><b>Shopping bag</b></h3>		
 				      <div class="pull-right">
-					       <a href="women.html" >Back to shop<i class="fa fa-angle-right"></i></a>
+					       <a href="{{ URL::to('categoryList') }}" >Back to shop<i class="fa fa-angle-right"></i></a>
 				      </div>
 			     </div><!-- //CONTAINER -->
 		</section><!-- //PAGE HEADER -->
@@ -45,48 +34,28 @@
 						<table class="shop_table">
 							<thead>
 								<tr>
-									<th class="product-thumbnail"></th>
 									<th class="product-name">Item</th>
 									<th class="product-price">Price</th>
 									<th class="product-quantity">Quantity</th>
-									<th class="product-quantity">Update</th>
 									<th class="product-subtotal">Total</th>
-									<th class="product-remove">Remove</th>
 								</tr>
 							</thead>
 							<tbody>
                                   
-
-                                  
-     @foreach(Cart::content() as $row)
-
-              <tr class="cart_item">
-	              <td class="product-thumbnail">
-	              	  <a href="product-page.html" ><img src="{{ asset('')}}" width="100px" alt="" /></a>
-	              </td>
-		          <td class="product-name">
-					  <a href="product-page.html">{{$row->name}}</a>
-				  </td>
-				  <td class="product-price">£{{$row->price}}</td>
-				  <td class="product-quantity">
-				  	<form action="{{URL::to('updateQuantity')}}" method="post">
-                          {{ csrf_field() }}
-                          <input name="rowId" type="hidden" value="{{$row->rowId}}">
-						  <input type="text" name="quantity" value="{{$row->qty}}">  
-                           </td><td class="product-quantity">
-                           <input type="submit" value="Update">
-                       </form>
-                   </td>
-				   <td class="product-subtotal">£{{$row->total}}</td>
-                   <td class="product-remove"><a href="{{URL::to('removeFromCart/'.$row->rowId)}}" ><span>Remove</span> <i>X</i></a></td>
-               </tr>	  
-               @endforeach
-	   
-							</tbody>
-						</table>
-					</div><!-- //CART TABLE -->
-					
-					
+		          @foreach(Cart::content() as $row)							                   
+		              <tr class="cart_item">
+				          <td class="product-name">
+							  <a href="product-page.html">{{$row->name}}</a>
+						  </td>
+						  <td class="product-price">£{{$row->price}}</td>
+						  <td class="product-quantity">{{$row->qty}}</td>
+						   <td class="product-subtotal">£{{$row->total}}</td>
+		               </tr>
+					   @endforeach	   
+					 </tbody>
+				  </table>
+			   </div><!-- //CART TABLE -->
+								
 					<!-- SIDEBAR -->
 					<div id="sidebar" class="col-lg-3 col-md-3 padbot50">
 						
@@ -99,8 +68,8 @@
 									<td>£{{Cart::subtotal()}}</td>
 								</tr>
 								<tr class="shipping clearfix">
-									<th>SERVICE CHARGE</th>
-									<td>£0.00</td>
+									<th>DELIVERY CHARGE</th>
+									<td>£{{Session::get('deliveryCharge')}}</td>
 								</tr>
 								<tr class="total clearfix">
 									<th>Total</th>
@@ -111,8 +80,9 @@
 								<input type="text" name="coupon" value="Have a coupon?" onFocus="if (this.value == 'Have a coupon?') this.value = '';" onBlur="if (this.value == '') this.value = 'Have a coupon?';" />
 								<input type="submit" value="Apply">
 							</form>
-							<a class="btn active" href="{{URL::to('cartConfirm')}}" >Pay Now</a>
-							<a class="btn inactive" href="{{URL::to('categoryList')}}" >Continue shopping</a>
+							 <div id="paypal-button-container"></div>
+							  
+							<a class="btn inactive" href="{{ URL::to('categoryList') }}" >Continue shopping</a>
 						</div><!-- //REGISTRATION FORM -->
 					</div><!-- //SIDEBAR -->
 				</div><!-- //ROW -->
@@ -120,8 +90,24 @@
 		</section><!-- //SHOPPING BAG BLOCK -->
 				
 
-
-
+<script>
+  paypal.Buttons({
+    createOrder: function(data, actions) {
+      return actions.order.create({
+      	purchase_units: [{
+          amount: {
+            value: '{{Cart::total()}}'
+          }
+        }]
+      });
+    },
+    onApprove: function(data, actions) {
+    	return actions.order.capture().then(function(details) {
+        return actions.redirect('paymentExecute');
+      });
+    }
+  }).render('#paypal-button-container');
+</script>
 @endsection
 
 

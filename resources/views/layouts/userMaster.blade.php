@@ -149,28 +149,17 @@
     </div>
 </aside>
 
-
-
-
-
-
-
-
-
-
 <!-- Main Wrapper -->
 <div id="wrapper">
 
    @yield('mainContent')
-
-
 
     <!-- Footer-->
     <footer class="footer">
         <span class="pull-right">
             We Buy and We Sell
         </span>
-        iMetroTech 2018
+        iMetroTech 2019
     </footer>
 
 </div>

@@ -47,4 +47,9 @@ class Product extends Model
         return $this->hasMany('App\Media', 'model_id')->where('model_name', 'like', 'product%');
     }
 
+     public function orders(){
+        return $this->belongsTo('App\Order');
+    }
+
+
 }

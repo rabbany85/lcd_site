@@ -73,15 +73,12 @@
 								<div class="tovar_item clearfix">
 								 <a href="{{URL::to('singleProduct/'.$product->id)}}">
 	                                <div class="well well-lg">
+	                                	@if($product->media->first())
 	                                	<img src="{{ asset($product->media->first()->url)}}" style="width: 150px; height: 150px;">
+	                                	@endif
 	                                	<div class="tovar_description clearfix">
 											<span class="tovar_title">{{$product->title}}</span>
 											<span class="tovar_price">£{{$product->price}}</span>
-										
-                    <div class="shopping_bag">
-                        <a class="shopping_bag_btn" id="add-to-cart" ><i class="fa fa-shopping-cart"></i><p>Add Now</p></a>
-                    </div>
-                    
 										</div>
 	                                </div>
                                  </a>	
