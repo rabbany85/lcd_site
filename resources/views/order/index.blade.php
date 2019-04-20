@@ -8,17 +8,6 @@
                         <i class="fa fa-arrow-up"></i>
                     </div>
                 </a>
-                <div id="hbreadcrumb" class="pull-right m-t-lg">
-                    <ol class="hbreadcrumb breadcrumb">
-                        <li><a href="{{URL::to('login')}}">Dashboard</a></li>
-                        <li>
-                            <span>Tables</span>
-                        </li>
-                        <li class="active">
-                            <span>Order History</span>
-                        </li>
-                    </ol>
-                </div>
                 <h2 class="font-light m-b-xs">
                     Order History
                 </h2>
