@@ -30,9 +30,9 @@ $factory->define(App\User::class, function (Faker $faker) {
 $factory->define(App\Product::class, function(Faker $faker){
     return[
     	'title' => $faker->word,
-    	'price' => rand(10, 1000),
+    	'price' => $faker->numberBetween($min = 1000, $max = 9000),
     	'description' => $faker->text,
-    	'category_id' => rand(1, 5),
+    	'category_id' => $faker->numberBetween($min = 1, $max = 5),
     ];
 });
 
@@ -41,7 +41,7 @@ $factory->define(App\Media::class, function(Faker $faker){
 	return [
         'model_name' => 'product',
         'url' => $faker->imageUrl($width = 640, $height = 480),
-        'model_id' => rand(1, 100),
+        'model_id' => $faker->numberBetween($min = 1, $max = 100),
 	];
 });
 

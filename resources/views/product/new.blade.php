@@ -62,7 +62,7 @@
                                       </div>
                                       <div class="form-group">
                                            <label for="col-sm-2 control-label">Select Category</label>
-                                           <div class="class="col-sm-10"">
+                                           <div class="col-sm-10">
                                                <select class="form-control" name="category_id">
                                                       @foreach($categories as $category)
                                                                 <option value="{{$category->id}}">{{$category->title}}</option>
