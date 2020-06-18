@@ -147,7 +147,7 @@
                     
                     <div class="col-lg-2 col-md-2 col-sm-3 col-xs-6 col-ss-12 padbot30">
                         <h4>Contacts</h4>
-                        <div class="foot_address"><span>iMetroTech</span>698 Romford Road, Manor Park, London E12 5AJ</div>
+                        <div class="foot_address"><span>iMetroTech</span>316 Romford road, Forest gate, E7 8BD</div>
                         <div class="foot_phone"><a href="tel:0203 862 1414" >0203 862 1414</a></div>
                         <div class="foot_mail"><a href="mailto:info@glamyshop.com" >info@imetrotech.co.uk</a></div>
                         <div class="foot_live_chat"><a href="{{ URL::to('contactUs') }}"><i class="fa fa-comment-o"></i> Contact Us</a></div>

@@ -32,7 +32,7 @@
 				<div class="row padbot30">
 					<div class="col-lg-9 col-md-9 padbot30">
 						<div id="map">
-<iframe height="490" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5016.623598168805!2d0.04830605628296791!3d51.55110949636015!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47d8a6538a9c21af%3A0xbd36175d6d542afc!2sRomford+Rd%2C+London+E12+5AJ!5e0!3m2!1sen!2suk!4v1526834068393" style="border:0" allowfullscreen></iframe>
+<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2481.185694311576!2d0.025116515771420222!3d51.54649387964153!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47d8a7bccce4cc47%3A0xef3e2b04c575f7a1!2s316%20Romford%20Rd%2C%20Forest%20Gate%2C%20London%20E7%208BD!5e0!3m2!1sen!2suk!4v1592469919993!5m2!1sen!2suk" height="490" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
 
 						</div>
 					</div>
@@ -41,8 +41,7 @@
 						<ul class="contact_info_block">
 							<li>
 								<h3><i class="fa fa-map-marker"></i><b>Office locations</b></h3>
-								<p>Coming Soon</p>
-								<span>698 Romford Road, London, E12 5AJ, UK,</span>
+								<span>316 Romford road, Forest gate, E7 8BD</span>
 							</li>
 							<li>
 								<h3><i class="fa fa-phone"></i><b>Phones</b></h3>
