@@ -95,7 +95,7 @@ public function productList($id) {
     $products = Product::where('category_id', $id)->paginate(6);
            
     
-    return view('pages.categoryList', compact('categories', 'products', 'product_image'));
+    return view('pages.categoryList', compact('categories', 'products'));
   }
 
 

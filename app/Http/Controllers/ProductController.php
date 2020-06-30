@@ -21,9 +21,6 @@ class ProductController extends Controller
 
 
      public function index(Request $request){
-        // if($this->isAPI()){
-        //     return response()->json(Product::all());
-        // }
         return view('product.index', [
             'products' => Product::paginate(15)
         ]);
@@ -33,11 +30,7 @@ class ProductController extends Controller
         if($request->isMethod('POST')){
             $request->validate(Product::validation());
             $product = Product::create(array_merge($request->toArray(), [
-            ]));
-            
-            // if($this->isAPI()){
-            //     return response()->json($venue);
-            // }
+            ]));      
             return redirect()->route('product.single', [
                 'product' => $product->id
             ]);
@@ -48,9 +41,6 @@ class ProductController extends Controller
         ]);
     }
     public function single(Product $product, Request $request){
-        // if($this->isAPI()){
-        //     return response()->json($venue);
-        // }
         return view('product.single', [
             'product' => $product
         ]);
@@ -60,9 +50,6 @@ class ProductController extends Controller
             $request->validate(Product::validation());
             $product->update($request->toArray());
         
-            // if($this->isAPI()){
-            //     return response()->json($venue);
-            // }
             return redirect()->route('product.single', [
                 'product' => $product->id
             ]);
